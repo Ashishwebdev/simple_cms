@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+ 
+  get 'example_controller/example_index'
+   
+   get 'demo/hello'
+
+
+
+  get 'demo/index'
+  #match "demo/index", :to => "demo#index", :via => :get
+# match ':controller(/:action(/:id))', :via => :get
+#default route 
+#may go away in future versions of rails
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
