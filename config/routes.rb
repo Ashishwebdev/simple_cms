@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
- 
-  get 'example_controller/example_index'
+ root 'demo#index'
+   get 'demo/index'
+  
    
    get 'demo/hello'
 
 
 
-  get 'demo/index'
+
+  get 'demo/other_hello'
+  get 'demo/google'
   #match "demo/index", :to => "demo#index", :via => :get
 # match ':controller(/:action(/:id))', :via => :get
 #default route 

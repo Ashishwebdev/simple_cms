@@ -1,1 +1,12 @@
 <h1 >Hello world from hello </h1>
+<% target="world"  %>
+<%="Hello #{target}"%>
+<% @array.each do |n|%>
+<%= n	%><br/>
+<%end%>
+<%= link_to('Back to Index',{:action =>'index'})%>
+</br>
+ID: <%= @id%> </br>
+ID:<%= params[:id]%></br>
+Page:<%= @page%></br>
+Next Page:<%= @page.to_i +  1 %>
