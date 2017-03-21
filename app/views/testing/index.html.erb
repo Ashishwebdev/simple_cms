@@ -1,0 +1,28 @@
+<div class="subjects index">
+	<h2>Testings</h2>
+
+	<%= link_to("Add New Example",'#', :class => 'action new') %>
+	<table class = "listing" summary="Example list">
+		<tr class="header">
+			<th>#</th>
+			<th>Subject</th>
+			<th>Visible</th>
+			<th>Pages</th>
+			<th>Actions</th>
+		</tr>
+		<%  @testings.each do |testing| %>
+ 		<tr>
+ 			<td><%= testing.position %></td>
+ 			<td><%= testing.name %></td>
+ 			<td class="center"><%= testing.visible ? 'yes' : 'No' %></td>
+ 			<td class="actions">
+ 				<%= link_to("Show", '#', :class => 'action show') %>
+ 				<%= link_to("Edit", '#', :class => 'action edit') %>
+ 				<%= link_to("Delete", '#', :class => 'action delete') %>
+            </td>
+
+ 		</tr>	
+		<%end%>
+
+	</table>
+</div>

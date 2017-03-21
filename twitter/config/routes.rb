@@ -1,27 +1,14 @@
 Rails.application.routes.draw do
+  get '/signin' => 'authentication#signin_path'
 
+  get '/signup'  => 'authentication#signup_get'
 
+  post '/signin' => 'authentication#signin'
 
- root 'demo#index'
+  post '/signup' =>  'authentication#signup'
 
-
-resources :testing do
-
-   member do
-   get :delete 
-   end
-
- end
-
-
-   get 'demo/index'
-   get 'demo/hello'
-   get 'demo/other_hello'
-   get 'demo/google'
-  #match "demo/index", :to => "demo#index", :via => :get
-# match ':controller(/:action(/:id))', :via => :get
-#default route 
-#may go away in future versions of rails
+  get '/logout' => 'authentication#logout'
+   
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
