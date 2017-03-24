@@ -1,2 +1,16 @@
-<h1>Testing#delete</h1>
-<p>Find me in app/views/testing/delete.html.erb</p>
+<%= link_to("Back to page",'/testing',:class=> 'action index')%>
+
+<div class="testings delete">
+	<h2>Delete testing</h2>
+
+	<%= form_for(@testing,:method => 'delete')do |t| %>
+	<p>Are you sure you want to permanently delete this subject? </p>
+
+	<p class="reference-name"><%= t.object.name %> </p>
+	</table>
+	<div class="form-buttons">
+		<%= t.submit("Delete Subject")%>
+
+	</div>
+<% end %>
+</div>

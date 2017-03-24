@@ -41,9 +41,13 @@ class TestingController < ApplicationController
   end
 
   def delete
+    @testing = Testing.find(params[:id])
   end
 
   def destroy
+     @testing = Testing.find(params[:id])
+     @testing.destroy
+     redirect_to ({:action=> 'index',:id=> @testing.id})
   end
 
 private
