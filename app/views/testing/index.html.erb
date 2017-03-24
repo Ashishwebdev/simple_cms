@@ -7,7 +7,6 @@
 			<th>#</th>
 			<th>Subject</th>
 			<th>Visible</th>
-			<th>Pages</th>
 			<th>Actions</th>
 		</tr>
 		<%  @testings.each do |testing| %>
@@ -17,8 +16,8 @@
  			<td class="center"><%= testing.visible ? 'yes' : 'No' %></td>
  			<td class="actions">
  				<%= link_to("Show",{:controller => 'testing',:action=> 'show',:id=>testing.id}, :class => 'action show') %>
- 				<%= link_to("Edit", '#', :class => 'action edit') %>
- 				<%= link_to("Delete", '#', :class => 'action delete') %>
+ 				<%= link_to("Edit", {:controller => 'testing',:action=>'edit',:id=>testing.id}, :class => 'action edit') %>
+ 				<%= link_to("Delete", {:controller => 'testing',:action=>'delete',:id=>testing.id}, :class => 'action delete') %>
             </td>
 
  		</tr>	

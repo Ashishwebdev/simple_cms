@@ -11,22 +11,33 @@ class TestingController < ApplicationController
   def new
     @testing = Testing.new
   end
-  def create
-    @testing = Testing.new(params.require(:testing).permit(:name,:position,:visible))
-     if @testing.save
-      redirect_to ({:action=> 'index',:id=> @testing.id})
-     end
 
-   else
-    return ('new')
-   end
+  def create
+    @testing = Testing.new(testing_param)
+       if @testing.save
+      redirect_to ({:action=> 'index',:id=> @testing.id})
+
+       else
+    render ('new')
+       end
 
   end
 
   def edit
+    @testing = Testing.find(params[:id])
+    render('edit')
   end
 
   def update
+   
+    @testing = Testing.find(params[:id])
+
+   if @testing.update_attributes(testing_param)    
+      redirect_to ({:action=> 'index',:id=> @testing.id})
+   else
+    render ('new')
+   end
+
   end
 
   def delete
@@ -35,4 +46,10 @@ class TestingController < ApplicationController
   def destroy
   end
 
+private
 
+def testing_param
+  params.require(:testing).permit(:name,:position,:visible)
+end
+
+end
