@@ -1,7 +1,7 @@
 <div class="subjects index">
 	<h2>Testings</h2>
 
-	<%= link_to("Add New Example",'#', :class => 'action new') %>
+	<%= link_to("Add New Example",'/testing/new', :class => 'action new') %>
 	<table class = "listing" summary="Example list">
 		<tr class="header">
 			<th>#</th>
@@ -16,7 +16,7 @@
  			<td><%= testing.name %></td>
  			<td class="center"><%= testing.visible ? 'yes' : 'No' %></td>
  			<td class="actions">
- 				<%= link_to("Show", '#', :class => 'action show') %>
+ 				<%= link_to("Show",{:controller => 'testing',:action=> 'show',:id=>testing.id}, :class => 'action show') %>
  				<%= link_to("Edit", '#', :class => 'action edit') %>
  				<%= link_to("Delete", '#', :class => 'action delete') %>
             </td>

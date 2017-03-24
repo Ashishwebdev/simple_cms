@@ -1,2 +1,31 @@
-<h1>Testing#show</h1>
-<p>Find me in app/views/testing/show.html.erb</p>
+<%= link_to("Back to link", {:controller => 'testing', :action => 'index', }, :class => 'back-link') %>
+<div class="testing show">
+	<h2>show Testing</h2>
+	<table summary= "Testing deatil view">
+		<tr>
+			<th>Name</th>
+			<td><%= @testing.name %></td>
+		</tr>
+		<tr>
+			<th>Position</th>
+			<td><%= @testing.position %></td>
+		</tr>
+		<tr>
+			<th>Visible?</th>
+			<td><%= @testing.visible ? 'true' : 'false' %></td>
+		</tr>
+		<tr>
+			<th>Created</th>
+			<td><%= @testing.created_at %></td>
+		</tr>
+
+		<tr>
+			<th>Updated</th>
+			<td><%= @testing.updated_at %></td>
+		</tr>
+
+
+
+
+
+	</table>
