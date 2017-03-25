@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
 
 
+resources :section do
+  member do
+    get :delete
+  end
+end
 
- root 'demo#index'
-
+resources :page do
+  member do
+    get :delete
+  end
+end
 
 resources :testing do
 

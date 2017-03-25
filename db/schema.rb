@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321163233) do
+ActiveRecord::Schema.define(version: 20170325052144) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "first_name",      limit: 25
@@ -26,16 +26,12 @@ ActiveRecord::Schema.define(version: 20170321163233) do
   add_index "admin_users", ["username"], name: "index_admin_users_on_username"
 
   create_table "pages", force: :cascade do |t|
-    t.integer  "subject_id"
-    t.string   "name",       limit: 50
-    t.integer  "permalink"
-    t.boolean  "position"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.string   "Name"
+    t.integer  "position"
+    t.boolean  "visible"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "pages", ["permalink"], name: "index_pages_on_permalink"
-  add_index "pages", ["subject_id"], name: "index_pages_on_subject_id"
 
   create_table "section_edits", force: :cascade do |t|
     t.integer  "admin_user_id"
@@ -46,38 +42,6 @@ ActiveRecord::Schema.define(version: 20170321163233) do
   end
 
   add_index "section_edits", ["admin_user_id", "section_id"], name: "index_section_edits_on_admin_user_id_and_section_id"
-
-  create_table "sections", force: :cascade do |t|
-    t.integer  "page_id"
-    t.string   "name"
-    t.integer  "positon"
-    t.boolean  "visible"
-    t.string   "content_type"
-    t.text     "content"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "sections", ["page_id"], name: "index_sections_on_page_id"
-
-  create_table "selections", force: :cascade do |t|
-    t.string   "index"
-    t.string   "show"
-    t.string   "new"
-    t.string   "edit"
-    t.string   "update"
-    t.string   "delete"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "subjects", force: :cascade do |t|
-    t.string   "name",       limit: 50
-    t.integer  "position",              null: false
-    t.boolean  "visible"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
 
   create_table "testings", force: :cascade do |t|
     t.string   "name"

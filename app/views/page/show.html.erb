@@ -1,0 +1,31 @@
+<%= link_to("Back to link", {:controller => 'page', :action => 'index', }, :class => 'back-link') %>
+<div class="testing show">
+	<h2>show Pages</h2>
+	<table summary= "pages deatil view">
+		<tr>
+			<th>Name</th>
+			<td><%= @page.Name %></td>
+		</tr>
+		<tr>
+			<th>Position</th>
+			<td><%= @page.position %></td>
+		</tr>
+		<tr>
+			<th>Visible?</th>
+			<td><%= @page.visible ? 'true' : 'false' %></td>
+		</tr>
+		<tr>
+			<th>Created</th>
+			<td><%= @page.created_at %></td>
+		</tr>
+
+		<tr>
+			<th>Updated</th>
+			<td><%= @page.updated_at %></td>
+		</tr>
+
+
+
+
+
+	</table>

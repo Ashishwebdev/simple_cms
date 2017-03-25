@@ -47,7 +47,7 @@ class TestingController < ApplicationController
   def destroy
      @testing = Testing.find(params[:id])
      @testing.destroy
-     redirect_to ({:action=> 'index',:id=> @testing.id})
+     render('index')
   end
 
 private
